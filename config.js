@@ -1,6 +1,6 @@
 const config = {
-    application_port: 8000,
-    cors_origin_url: 'http://127.0.0.1:3000',
+    application_port: process.env.APPLICATION_PORT,
+    cors_origin_url: process.env.CORS_ORIGIN_URL,
 };
 
 module.exports = config;
