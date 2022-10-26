@@ -1,10 +1,11 @@
 const express = require('express')
 const cors = require('cors');
+const config = require('./config');
 
 const app = express();
 
 const corsOptions = {
-    origin: 'http://127.0.0.1:3000',
+    origin: config.cors_origin_url,
 };
 
 app.use(cors(corsOptions));
@@ -14,7 +15,7 @@ app.get('/', (req, res) => {
     res.send('Base route');
 });
 
-const PORT = 8000;
+const PORT = config.application_port;
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
 });
