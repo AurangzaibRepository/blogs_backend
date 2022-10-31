@@ -5,6 +5,14 @@ module.exports = (sequelize, Sequelize) => {
         email: Sequelize.STRING,
         phone_number: Sequelize.STRING,
         role: Sequelize.ENUM('admin', 'user'),
+        createdAt: {
+            type: Sequelize.DATEONLY,
+            defaultValue: Sequelize.NOW,
+        },
+        updatedAt: {
+            type: Sequelize.DATEONLY,
+            defaultValue: Sequelize.NOW,
+        },
     });
 
     return user;
